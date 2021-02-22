@@ -8,9 +8,31 @@ namespace EShop
 {
     public class Products
     {
-        public int Id { get; private set; }
+        public Products()
+        {
+        }
+
+        public Products(int id, string name, string manufecturer, double price)
+        {
+            Id = id;
+            Name = name;
+            Price = price;
+            Manufacturer = manufecturer;
+        }
+
+        public int Id { get; set; }
         public string Name { get; set; }
-        public decimal Price { get; set; }
-        public string Manufecturer { get; set; }
+        public double Price { get; set; }
+        public string Manufacturer { get; set; }
+
+        public void Display()
+        {
+            Console.WriteLine($"ID:{Id} Name:{Name} Price:{Price} Manufecturer: {Manufacturer} ");
+        }
+
+        public void Display(int i)
+        {
+            Console.WriteLine($"{i}. Name:{Name} Manufecturer:{Manufacturer} Price:{Price}");
+        }
     }
 }
