@@ -1,39 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EShop
 {
     public class User
     {
-        public User(string name, string phoneNumber, string email)
+        public User()
         {
-            name = Name;
-            phoneNumber = PhoneNumber;
-            email = Email;
+            Name = "NoName";
+        }
+
+        public User(string name, string phoneNumber, string email, double money)
+        {
+            Name = name;
+            PhoneNumber = phoneNumber;
+            Email = email;
+            Money = money;
         }
 
         public string Name { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
+        public double Money { get; set; }
 
-        public void GetUser()
+        public void Pay(double total)
         {
-            Console.WriteLine("Please, enter your name");
-            Name = Console.ReadLine();
-            Console.WriteLine("Please, enter your phone number");
-            PhoneNumber = Console.ReadLine();
-            Console.WriteLine("Please, enter your Email");
-            Email = Console.ReadLine();
-            if (Name != null && PhoneNumber != null && Email != null)
+            if (total > Money)
             {
-                Console.WriteLine($"Hello {Name}, Welcome!");
+                Console.WriteLine("Not enough money");
             }
             else
             {
-                Console.WriteLine("Sorry, not all required fields are filled");
+                double balance = Money - total;
+                Console.WriteLine($"Thank you for the visit, your card balance is: {balance} UAH");
             }
         }
     }

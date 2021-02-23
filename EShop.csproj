@@ -5,6 +5,7 @@
     <TargetFramework>net5.0</TargetFramework>
 	  <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 	  <CodeAnalysisRuleSet>../settings.ruleset</CodeAnalysisRuleSet>
+        <WarningsAsErrors />
   </PropertyGroup>
 
   <ItemGroup>
